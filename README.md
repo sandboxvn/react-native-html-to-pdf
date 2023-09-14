@@ -1,10 +1,10 @@
-# react-native-html-to-pdf
+# react-native-html-to-pdf - Sandboxvn Technology JSC
 
 Convert html strings to PDF documents using React Native
 
 ## NOTE From Hoang
 
-Lib này bị lỗi không save được file, nhưng không sao, tôi sửa rồi
+Lib này bị lỗi không save được file, nhưng không sao, tôi sửa rồi. Nó sẽ lưu thẳng vào Documents nhé
 
 ## Installation
 
@@ -74,7 +74,6 @@ export default class Example extends Component {
     let options = {
       html: "<h1>PDF TEST</h1>",
       fileName: "test",
-      directory: "Documents",
     };
 
     let file = await RNHTMLtoPDF.convert(options);

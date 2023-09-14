@@ -114,10 +114,13 @@ public class RNHTMLtoPDFModule extends ReactContextBaseJavaModule {
       pdfConverter.convert(mReactContext, htmlString, file, shouldEncode, resultMap, promise, baseURL);
   }
 
+  /**
+   * Hàm này sẽ lưu vào cache nếu không truyền directory vào
+   */
   private File getTempFile(String fileName) throws IOException {
       File outputDir = getReactApplicationContext().getCacheDir();
-      return File.createTempFile(fileName, PDF_EXTENSION, outputDir);
-
+      // return File.createTempFile(fileName, PDF_EXTENSION, outputDir);
+      return File.createTempFile(fileName, PDF_EXTENSION, Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS));
   }
 
   private boolean isFileNameValid(String fileName) throws Exception {
